@@ -3,10 +3,11 @@
 For this project, you will create a C++ program that validates all types of input in a user friendly manner.
 
 ## Requirements
+
 You must work individually on this project.
 
 * Use this template repository to create a **private** GitHub repository in the course organization.
-  * **Your repository must be named with the convention: M1AP-netid**, where netid is your UVM NetID username.
+    * **Your repository must be named with the convention: M1AP-netid**, where netid is your UVM NetID username.
 * Your main program must prompt the user for the following types of data:
 
 | Type of input | Definition                                                        |
@@ -17,15 +18,17 @@ You must work individually on this project.
 | Integer | A valid integer value with nothing else on the same line of input |
 | Floating-Point Number | A valid floating-point number (which can be an integer, it isn't required to have a decimal part) and nothing else on the same line of input |
 
-* Your program must validate all input, reprompting the user when invalid input is received or no input is received. There should be different reprompt messages for each (see sample output below).
+* Your program must validate all input, reprompting the user when invalid input is received or no input is received.
+  There should be different reprompt messages for each (see sample output below).
 * Your program must not have any runtime errors, no matter what the user enters.
 * Your program must utilize a function for each type of input, to keep your code organized.
 * All of the above must be pushed to your GitHub repository.
 * **Any C++ concepts that are from outside the course materials must be cited in your README.md file.**
-  * **No `goto` commands are allowed in this project.**
-* Submit the URL of the GitHub repository. 
+    * **No `goto` commands are allowed in this project.**
+* Submit the URL of the GitHub repository.
 
 ## Grading
+
 The project is out of 50 points.
 
 | Points Possible | Description of requirement   |
@@ -36,9 +39,11 @@ The project is out of 50 points.
 | 15 pts          | Integer input                |
 | 10 pts          | Floating point number input  |
 
-It is expected that your program will compile, run, and have good style. If your project does not, you may receive point deductions.
+It is expected that your program will compile, run, and have good style. If your project does not, you may receive point
+deductions.
 
 ## Some useful tips
+
 * Remember the difference between these two ways to input strings:
   ```cpp
   string input;
@@ -53,8 +58,11 @@ It is expected that your program will compile, run, and have good style. If your
   getline(cin, input);
   ```
 * You can get the number of characters in a string by calling the `length` method.
-* There is a function called `isspace` that takes in a character and returns true if the character is whitespace (space, tab, newline) and false otherwise. It is included in the `<ctype>` library which is already included in the starter code.
-* There is an object called a `stringstream` that you may find useful. It is included in the `sstream` library which is included in the starter code. Here is how it is used:
+* There is a function called `isspace` that takes in a character and returns true if the character is whitespace (space,
+  tab, newline) and false otherwise. It is included in the `<ctype>` library which is already included in the starter
+  code.
+* There is an object called a `stringstream` that you may find useful. It is included in the `sstream` library which is
+  included in the starter code. Here is how it is used:
   ```cpp
   string input;
   int num;
@@ -66,9 +74,11 @@ It is expected that your program will compile, run, and have good style. If your
   // Read from the string stream into an integer
   ss >> num;
   ```
-  If the string `input` does not start with a valid integer, the `ss >> num` statement will return false and the string stream will be in a bad state (meaning you can't read from it again until the stream is cleared).
+  If the string `input` does not start with a valid integer, the `ss >> num` statement will return false and the string
+  stream will be in a bad state (meaning you can't read from it again until the stream is cleared).
 
 ## Sample Output
+
 The user input is in bold font.
 <pre>
 Enter a single character: <b>no</b>

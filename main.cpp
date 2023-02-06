@@ -5,6 +5,8 @@
 
 using namespace std;
 
+bool stringContainsSpace(string input);
+
 char get_char_from_user();
 
 string get_word_from_user();
@@ -29,6 +31,13 @@ int main() {
     return 0;
 }
 
+bool stringContainsSpace(string input) {
+    for (int i = 0; i < input.length(); i++)
+        if (isspace(input[i]))
+            return true;
+    return false;
+}
+
 char get_char_from_user() {
     string input;
     string prompt = "Enter a single character: ";
@@ -45,8 +54,18 @@ char get_char_from_user() {
 }
 
 string get_word_from_user() {
-    // TODO: Complete the function
-    return "?";
+    string input;
+    string prompt = "Enter a single word: ";
+    cout << prompt;
+    getline(cin, input);
+    while (input.length() < 1 || stringContainsSpace(input)) {
+        if (input.length() < 1)
+            cout << "No input. ";
+        else cout << "Invalid input. ";
+        cout << prompt;
+        getline(cin, input);
+    }
+    return input;
 }
 
 string get_sentence_from_user() {
