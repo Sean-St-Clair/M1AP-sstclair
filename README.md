@@ -119,3 +119,8 @@ Invalid input. Enter a number: <b>10 4</b>
 Invalid input. Enter a number: <b>7.8</b>
 You entered the floating-point number 7.8
 </pre>
+
+## Code Outside Class
+
+I used [this](https://stackoverflow.com/questions/20731/how-do-you-clear-a-stringstream-variable) stack overflow answer
+to gain some insight about clearing a string stream

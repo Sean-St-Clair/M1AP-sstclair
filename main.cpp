@@ -3,6 +3,8 @@
 #include <sstream>
 #include <string>
 
+// TODO: More comments?
+
 using namespace std;
 
 bool stringContainsSpace(string input);
@@ -69,13 +71,43 @@ string get_word_from_user() {
 }
 
 string get_sentence_from_user() {
-    // TODO: Complete the function
-    return "?";
+    string input;
+    string prompt = "Enter a sentence: ";
+    cout << prompt;
+    getline(cin, input);
+    while (input.length() < 1) {
+        cout << "No input. " << prompt;
+        getline(cin, input);
+    }
+    return input;
 }
 
 int get_int_from_user() {
-    // TODO: Complete the function
-    return -1;
+    string input;
+    string excess;
+    string prompt = "Enter a number: ";
+    stringstream ss;
+    int num;
+
+    // Uses a string stream to process input into num
+    cout << prompt;
+    getline(cin, input);
+    ss.str(input);
+    ss >> num;
+
+    while (input.length() < 1 || ss.fail() || ss.peek() != EOF) {
+        if (input.length() < 1) {
+            cout << "No input. ";
+        } else cout << "Invalid input. ";
+        ss.clear();
+        excess = "";
+
+        cout << prompt;
+        getline(cin, input);
+        ss.str(input);
+        ss >> num;
+    }
+    return num;
 }
 
 double get_float_from_user() {
