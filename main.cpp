@@ -2,12 +2,17 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+
 using namespace std;
 
 char get_char_from_user();
+
 string get_word_from_user();
+
 string get_sentence_from_user();
+
 int get_int_from_user();
+
 double get_float_from_user();
 
 int main() {
@@ -25,8 +30,18 @@ int main() {
 }
 
 char get_char_from_user() {
-    // TODO: Complete the function
-    return '?';
+    string input;
+    string prompt = "Enter a single character: ";
+    cout << prompt;
+    getline(cin, input);
+    while (input.length() != 1) {
+        if (input.length() < 1)
+            cout << "No input. ";
+        else cout << "Invalid input. ";
+        cout << prompt;
+        getline(cin, input);
+    }
+    return input[0];
 }
 
 string get_word_from_user() {
